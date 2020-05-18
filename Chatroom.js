@@ -95,7 +95,7 @@ class Chatroom
 				for(var i = 0; i < body.length; i++)
 				{
 					var thisOne = body[i];
-					console.log("\x1b[94m" + thisOne.user + "\x1b[0m: \x1b[37m(" + thisOne.time + ")\x1b[0m " + thisOne.message);
+					console.log("- \x1b[94m" + thisOne.user + "\x1b[0m: \x1b[37m(" + thisOne.time + ")\x1b[0m " + thisOne.message);
 				}
 			}
 			else

@@ -4,11 +4,33 @@ var inquirer = require('inquirer');
 var Chatroom = require('./Chatroom');
 var chatroom = new Chatroom("anon-chat-cos720.herokuapp.com");
 
+console.log("WELCOME TO \x1b[91mANON-CHAT\x1b[0m: A project for \x1b[91mCOS720\x1b[0m");
+
 program
 	.version("1.0.0")
 	.option('-f, --fetch', 'fetch and display all joinable chatrooms')
 	.option('-j, --join [room]', 'join a room to see and send messages')
 	.parse(process.argv);
+
+if(program.fetch)
+{
+	console.log("\nFetching all available chatrooms...");
+	chatroom.getAllRooms();
+}
+else if (program.join)
+{
+	if(program.join == true)
+	{
+		console.log("\nYou did not enter a chatroom to join, please specify one after the -j option.");
+	}
+	else
+	{
+		console.log("\nJoined chatroom \x1b[93m" + program.join + "\x1b[0m!");
+		console.log("\nFetching messages from chatroom \x1b[93m" + program.join + "\x1b[0m...");
+		chatroom.getAllMessages(program.join, promptWithinRoom);
+	}
+}
+
 
 
 function promptWithinRoom(chatroomName)
@@ -54,14 +76,14 @@ function promptWithinRoom(chatroomName)
 		}
 		else if(option == "i")
 		{
-			console.log("\nChanging identity for " + chatroomName + "...");
+			console.log("\nChanging identity for all chatrooms...");
 			chatroom.changeIdentity();
-			console.log("Changed identity for " + chatroomName + ".");
+			console.log("Changed identity for all chatrooms.");
 			promptWithinRoom(chatroomName);
 		}
 		else if(option == "q")
 		{
-			console.log("\nQuitting now. See you soon!");
+			console.log("\nQuitting \x1b[91mANON-CHAT\x1b[0m. See you soon!");
 		}
 		else
 		{
@@ -74,17 +96,5 @@ function promptWithinRoom(chatroomName)
 		console.log("\nError in option entry!");
 		console.log(error);
 	});
-}
-
-if(program.fetch)
-{
-	console.log("\nFetching all available chatrooms...");
-	chatroom.getAllRooms();
-}
-else if (program.join)
-{
-	console.log("Joined chatroom " + program.join + "!");
-	console.log("\nFetching messages from chatroom \x1b[93m" + program.join + "\x1b[0m...");
-	chatroom.getAllMessages(program.join, promptWithinRoom);
 }
 
