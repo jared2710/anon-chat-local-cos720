@@ -119,6 +119,7 @@ sudo apt purge nodejs npm     # completely remove nodejs and npm and all configu
 You will probably want to keep git installed, but in case you don't, you can uninstall it like this:
 ```bash
 sudo apt remove git           # remove git but keep configuration files
+   OR
 sudo apt purge git            # completely remove git and all configuration files
 ```
 
