@@ -14,15 +14,15 @@ Firstly, we need to install a [tor](https://2019.www.torproject.org/docs/debian.
 
 ```bash
 sudo apt update
-sudo apt install tor # should auto run as service after install
-sudo systemctl status tor # check status of tor service
+sudo apt install tor        # should auto run as service after install
+sudo systemctl status tor   # check status of tor service
 ```
 
 Then, we need to install [NodeJS](https://nodejs.org/) and [npm](https://www.npmjs.com/) in order to run the application:
 
 ```bash
 sudo apt update
-sudo apt install nodejs npm # both installed in one command
+sudo apt install nodejs npm   # both installed in one command
 ```
 
 Finally, we clone the application from this git repository, navigate into the cloned folder, install all dependencies and then run the application:
@@ -54,13 +54,14 @@ This application was created by Jared O'Reilly, a Computer Science Honours stude
 
 ## Uninstallation
 
-You can either uninstall tor or stop the service from running (with the option to start it again). This is done with the following commands on Ubuntu:
+You can either uninstall tor entirely or stop the service from running (with the option to start it again). This is done with the following commands on Ubuntu:
 
 ```bash
-sudo apt purge tor # completely remove tor and all configuration files
-sudo systemctl start tor # start the tor service
-sudo systemctl status tor # check if the tor service is running
-sudo systemctl stop tor # stop the tor service from running
+sudo apt remove tor         # remove tor but keep configuration files
+sudo apt purge tor          # completely remove tor and all configuration files
+sudo systemctl start tor    # start the tor service
+sudo systemctl status tor   # check if the tor service is running
+sudo systemctl stop tor     # stop the tor service from running
 ```
 
 Then, we need to install [NodeJS](https://nodejs.org/) and [npm](https://www.npmjs.com/) in order to run the application:
