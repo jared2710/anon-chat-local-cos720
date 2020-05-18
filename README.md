@@ -104,7 +104,9 @@ After choosing one of the options and the result being displayed, the choices wi
 You can either uninstall tor entirely or stop the service from running (with the option to start it again). This is done with the following commands on Ubuntu:
 ```bash
 sudo apt remove tor           # remove tor but keep configuration files
+-- OR --
 sudo apt purge tor            # completely remove tor and all configuration files
+-- OR --
 sudo systemctl start tor      # start the tor service
 sudo systemctl status tor     # check if the tor service is running
 sudo systemctl stop tor       # stop the tor service from running
@@ -113,6 +115,7 @@ sudo systemctl stop tor       # stop the tor service from running
 You can also uninstall NodeJS and npm in much the same way as uninstalling tor:
 ```bash
 sudo apt remove nodejs npm    # remove nodejs and npm but keep configuration files
+-- OR --
 sudo apt purge nodejs npm     # completely remove nodejs and npm and all configuration files
 ```
 
