@@ -10,11 +10,12 @@ This application is a NodeJS project, which is controlled using the command line
 
 ## Installation
 
-Firstly, we need to install a [tor](https://2019.www.torproject.org/docs/debian.html.en) client on the Ubuntu machine, which is simply done with:
+Firstly, we need to install a [tor](https://2019.www.torproject.org/docs/debian.html.en) client on the Ubuntu machine. To install tor, and check that the service is running on your machine, use the following commands:
 
 ```bash
 sudo apt update
-sudo apt install tor # should auto run as daemon after install 
+sudo apt install tor # should auto run as service after install
+sudo systemctl status tor # check status of tor service
 ```
 
 Then, we need to install [NodeJS](https://nodejs.org/) and [npm](https://www.npmjs.com/) in order to run the application:
@@ -50,3 +51,30 @@ Options:
 
 ## Contribution
 This application was created by Jared O'Reilly, a Computer Science Honours student at the University of Pretoria. Besides the npm packages, everything was designed, coded and tested by him. Thanks must go to the authors of the [tor-request](https://www.npmjs.com/package/tor-request) package, for making the use of the Tor network a breeze.
+
+## Uninstallation
+
+You can either uninstall tor or stop the service from running (with the option to start it again). This is done with the following commands on Ubuntu:
+
+```bash
+sudo apt purge tor # completely remove tor and all configuration files
+sudo systemctl start tor # start the tor service
+sudo systemctl status tor # check if the tor service is running
+sudo systemctl stop tor # stop the tor service from running
+```
+
+Then, we need to install [NodeJS](https://nodejs.org/) and [npm](https://www.npmjs.com/) in order to run the application:
+
+```bash
+sudo apt update
+sudo apt install nodejs npm # both installed in one command
+```
+
+Finally, we clone the application from this git repository, navigate into the cloned folder, install all dependencies and then run the application:
+
+```bash
+git clone https://github.com/jared2710/anon-chat-local-cos720.git
+cd anon-chat-local-cos720
+npm install .
+node app -h
+```
