@@ -74,7 +74,5 @@ sudo apt purge nodejs npm     # completely remove nodejs and npm and all configu
 Finally, navigate to the directory that contains the cloned anon-chat-local-cos720 directory, and run the following command to delete the anon-chat-local-cos720 directory:
 
 ```bash
-
-Use the below command :
 rm -rf anon-chat-local-cos720  # delete the directory cloned to this machine
 ```
