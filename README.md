@@ -27,7 +27,7 @@ sudo apt install nodejs npm # both installed in one command
 Finally, we clone the application from this git repository, navigate into the cloned folder, install all dependencies and then run the application:
 
 ```bash
-git clone https://github.com/jared2710/anon-chat-cos720.git
+git clone https://github.com/jared2710/anon-chat-local-cos720.git
 cd anon-chat-local-cos720
 npm install .
 node app -h
