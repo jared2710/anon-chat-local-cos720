@@ -14,8 +14,8 @@ Firstly, we need to install a [tor](https://2019.www.torproject.org/docs/debian.
 
 ```bash
 sudo apt update
-sudo apt install tor        # should auto run as service after install
-sudo systemctl status tor   # check status of tor service
+sudo apt install tor          # should auto run as service after install
+sudo systemctl status tor     # check status of tor service
 ```
 
 Then, we need to install [NodeJS](https://nodejs.org/) and [npm](https://www.npmjs.com/) in order to run the application:
@@ -57,25 +57,24 @@ This application was created by Jared O'Reilly, a Computer Science Honours stude
 You can either uninstall tor entirely or stop the service from running (with the option to start it again). This is done with the following commands on Ubuntu:
 
 ```bash
-sudo apt remove tor         # remove tor but keep configuration files
-sudo apt purge tor          # completely remove tor and all configuration files
-sudo systemctl start tor    # start the tor service
-sudo systemctl status tor   # check if the tor service is running
-sudo systemctl stop tor     # stop the tor service from running
+sudo apt remove tor           # remove tor but keep configuration files
+sudo apt purge tor            # completely remove tor and all configuration files
+sudo systemctl start tor      # start the tor service
+sudo systemctl status tor     # check if the tor service is running
+sudo systemctl stop tor       # stop the tor service from running
 ```
 
-Then, we need to install [NodeJS](https://nodejs.org/) and [npm](https://www.npmjs.com/) in order to run the application:
+You can also uninstall NodeJS and npm in much the same way as uninstalling tor:
 
 ```bash
-sudo apt update
-sudo apt install nodejs npm # both installed in one command
+sudo apt remove nodejs npm    # remove nodejs and npm but keep configuration files
+sudo apt purge nodejs npm     # completely remove nodejs and npm and all configuration files
 ```
 
-Finally, we clone the application from this git repository, navigate into the cloned folder, install all dependencies and then run the application:
+Finally, navigate to the directory that contains the cloned anon-chat-local-cos720 directory, and run the following command to delete the anon-chat-local-cos720 directory:
 
 ```bash
-git clone https://github.com/jared2710/anon-chat-local-cos720.git
-cd anon-chat-local-cos720
-npm install .
-node app -h
+
+Use the below command :
+rm -rf anon-chat-local-cos720  # delete the directory cloned to this machine
 ```
