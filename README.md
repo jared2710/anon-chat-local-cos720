@@ -49,9 +49,6 @@ Options:
   -h, --help          display help for command
 ```
 
-## Contribution
-This application was created by Jared O'Reilly, a Computer Science Honours student at the University of Pretoria. Besides the npm packages, everything was designed, coded and tested by him. Thanks must go to the authors of the [tor-request](https://www.npmjs.com/package/tor-request) package, for making the use of the Tor network a breeze.
-
 ## Uninstallation
 
 You can either uninstall tor entirely or stop the service from running (with the option to start it again). This is done with the following commands on Ubuntu:
@@ -76,3 +73,6 @@ Finally, navigate to the directory that contains the cloned anon-chat-local-cos7
 ```bash
 rm -rf anon-chat-local-cos720  # delete the directory cloned to this machine
 ```
+
+## Contribution
+This application was created by Jared O'Reilly, a Computer Science Honours student at the University of Pretoria. Besides the npm packages, everything was designed, coded and tested by him. Thanks must go to the authors of the [tor-request](https://www.npmjs.com/package/tor-request) package, for making the use of the Tor network a breeze.
