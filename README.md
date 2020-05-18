@@ -1,8 +1,8 @@
 # anon-chat-local-cos720
-The client-side command-line application for an anonymous chatroom, which forms part of a COS720 project at the University of Pretoria.
+The client-side command-line application for an anonymous chatroom, which forms part of a COS720 project at the University of Pretoria in South Africa.
 
 ## Environment
-This code was designed for and runs in Ubuntu Linux. Specifically, it was run on an Ubuntu VM through Virtualbox on a Windows host.
+This code was designed for and runs in Ubuntu Linux. Specifically, it was run on an Ubuntu VM through Virtualbox on a Windows host. The Tor network is used to connect to the chatroom server from this Ubuntu machine, so the chatroom is connected to anonymously.
 
 The VM was given 2.5GB of RAM, 32MB of video memory and 20GB of HDD, and networking was through a Bridger Adapter. These specs probably are not important, but are included anyway, for if all else fails.
 
