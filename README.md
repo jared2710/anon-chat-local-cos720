@@ -70,6 +70,27 @@ room456
 ubuntufans
 ```
 
+Finally, we can join one of these chatrooms, using the join flag and supplying the room name:
+```bash
+$ node app -j fortnite
+WELCOME TO ANON_CHAT: A project for COS720
+
+Joined chatroom fortnite!
+
+Fetching messages from chatroom fortnite...
+MESSAGES IN CHATROOM fortnite:
+- aullouildi: (2020-05-18 18:09:10) hello there
+- aullouildi: (2020-05-18 18:09:19) anyone?
+- esasmlaoes: (2020-05-18 18:09:29) i am here!!!
+
+? Select option:
+Refresh messages (r)
+Send message and refresh (s)
+New identity (i)
+Quit (q)
+> 
+```
+
 ## Uninstallation
 
 You can either uninstall tor entirely or stop the service from running (with the option to start it again). This is done with the following commands on Ubuntu:
