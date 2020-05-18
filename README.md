@@ -70,7 +70,7 @@ room456
 ubuntufans
 ```
 
-Finally, we can join one of these chatrooms, using the join flag and supplying the room name:
+Finally, we can join one of these chatrooms by using the join flag and supplying the room name:
 ```bash
 $ node app -j fortnite
 WELCOME TO ANON_CHAT: A project for COS720
@@ -90,6 +90,14 @@ New identity (i)
 Quit (q)
 > 
 ```
+
+We can now interact with this chatroom entering one of the provided options:
+- r : refresh the messages from the chatroom, i.e. fetch the messages
+- s : send a message to the chatroom and then refresh the messages, 
+- i : scrap the old identity and create a new one for use on the server
+- q : leave the chatroom and go back to the command line
+
+After choosing one of the options and the result being displayed, the choices will be displayed again, until q is typed (quit).
 
 ## Uninstallation
 
