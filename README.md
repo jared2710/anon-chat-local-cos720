@@ -11,7 +11,6 @@ This application is a NodeJS project, which is controlled using the command line
 ## Installation
 
 Firstly, we need to install a [tor](https://2019.www.torproject.org/docs/debian.html.en) client on the Ubuntu machine. To install tor, and check that the service is running on your machine, use the following commands:
-
 ```bash
 sudo apt update
 sudo apt install tor          # should auto run as service after install
@@ -19,14 +18,18 @@ sudo systemctl status tor     # check status of tor service
 ```
 
 Then, we need to install [NodeJS](https://nodejs.org/) and [npm](https://www.npmjs.com/) in order to run the application:
-
 ```bash
 sudo apt update
 sudo apt install nodejs npm   # both installed in one command
 ```
 
-Finally, we clone the application from this git repository, navigate into the cloned folder, install all dependencies and then run the application:
+If you do not have git installed already on your Ubuntu machine, you can install it with:
+```bash
+sudo apt update
+sudo apt install git          # only pro coders install this bad boy
+```
 
+Finally, we clone the application from this git repository, navigate into the cloned folder, install all dependencies and then run the application:
 ```bash
 git clone https://github.com/jared2710/anon-chat-local-cos720.git
 cd anon-chat-local-cos720
@@ -36,7 +39,6 @@ node app -h
 
 ## Usage
 This is a command line application, so we run it with a command and some flags. We can see all possible options to use with the command by using the help flag, as shown below:
-
 ```bash
 $ node app -h
 WELCOME TO ANON_CHAT: A project for COS720
@@ -50,7 +52,6 @@ Options:
 ```
 
 We can see the current version of this application using the version flag:
-
 ```bash
 $ node app -v
 WELCOME TO ANON_CHAT: A project for COS720
@@ -58,7 +59,6 @@ WELCOME TO ANON_CHAT: A project for COS720
 ```
 
 Now, we start to communicate with the chatroom server. We can see all available rooms which we can join by using the fetch flag:
-
 ```bash
 $ node app -f
 WELCOME TO ANON_CHAT: A project for COS720
@@ -102,7 +102,6 @@ After choosing one of the options and the result being displayed, the choices wi
 ## Uninstallation
 
 You can either uninstall tor entirely or stop the service from running (with the option to start it again). This is done with the following commands on Ubuntu:
-
 ```bash
 sudo apt remove tor           # remove tor but keep configuration files
 sudo apt purge tor            # completely remove tor and all configuration files
@@ -112,14 +111,23 @@ sudo systemctl stop tor       # stop the tor service from running
 ```
 
 You can also uninstall NodeJS and npm in much the same way as uninstalling tor:
-
 ```bash
 sudo apt remove nodejs npm    # remove nodejs and npm but keep configuration files
 sudo apt purge nodejs npm     # completely remove nodejs and npm and all configuration files
 ```
 
-Finally, navigate to the directory that contains the cloned anon-chat-local-cos720 directory, and run the following command to delete the anon-chat-local-cos720 directory:
+You will probably want to keep git installed, but in case you don't, you can uninstall it like this:
+```bash
+sudo apt remove git           # remove git but keep configuration files
+sudo apt purge git            # completely remove git and all configuration files
+```
 
+A bunch of packages will not be explicity uninstalled from this removal/purging, and they may not be needed by any other packages you have installed. You can automatically remove them using apt's autoremove command, like so:
+```bash
+sudo apt autoremove           # remove any of the leftover packages
+```
+
+Finally, navigate to the directory that contains the cloned anon-chat-local-cos720 directory, and run the following command to delete the anon-chat-local-cos720 directory:
 ```bash
 rm -rf anon-chat-local-cos720  # delete the directory cloned to this machine
 ```
