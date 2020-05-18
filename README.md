@@ -10,14 +10,14 @@ This application is a NodeJS project, which is controlled using the command line
 
 ## Installation
 
-Firstly, we need to install a tor client on the Ubuntu machine, which is simply done with:
+Firstly, we need to install a [tor](https://2019.www.torproject.org/docs/debian.html.en) client on the Ubuntu machine, which is simply done with:
 
 ```bash
 sudo apt update
 sudo apt install tor # should auto run as daemon after install 
 ```
 
-Then, we need to install NodeJS and npm in order to run the application:
+Then, we need to install [NodeJS](https://nodejs.org/) and [npm](https://www.npmjs.com/) in order to run the application:
 
 ```bash
 sudo apt update
@@ -41,4 +41,4 @@ code
 ```
 
 ## Contribution
-This application was created by Jared O'Reilly, a Computer Science Honours student at the University of Pretoria. Besides the npm packages, everything was designed, coded and tested by him. Thanks must go to the tor-request package, for making the use of the Tor network a breeze.
+This application was created by Jared O'Reilly, a Computer Science Honours student at the University of Pretoria. Besides the npm packages, everything was designed, coded and tested by him. Thanks must go to the authors of the [tor-request](https://www.npmjs.com/package/tor-request) package, for making the use of the Tor network a breeze.
