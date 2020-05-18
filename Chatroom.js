@@ -1,4 +1,5 @@
 var ChatroomServerInterface = require('./ChatroomServerInterface');
+var fs = require('fs');
 
 class Chatroom
 {
@@ -6,12 +7,12 @@ class Chatroom
 	{
 		this.hostname = hostname;
 		this.csi = new ChatroomServerInterface(hostname);
-		this.auth = this.randomAuth();
+		this.auth = this.retrieveStoredAuth();
 	}
 
 	randomAuth()
 	{
-		var length = 30;
+		var length = 50;
 		var result = "";
 		var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 		var charactersLength = characters.length;
@@ -21,10 +22,37 @@ class Chatroom
 		}
 		return result;
 	}
+
+	jsonFromIdentityFile()
+	{
+		var rawdata = fs.readFileSync("identity.json");
+		var jsonOfFile = JSON.parse(rawdata);
+		return jsonOfFile;
+	}
+
+	jsonToIdentityFile(json)
+	{
+		var toWrite = JSON.stringify(json);
+		fs.writeFileSync("identity.json", toWrite);
+	}
+
+	retrieveStoredAuth()
+	{
+		var json = this.jsonFromIdentityFile();
+		if(json.identity == "")
+		{
+			json.identity = this.randomAuth();
+			this.jsonToIdentityFile(json);
+		}
+		return json.identity;
+	}
 	
 	changeIdentity()
 	{
-		this.auth = this.randomAuth();
+		var json = this.jsonFromIdentityFile();
+		json.identity = this.randomAuth();
+		this.jsonToIdentityFile(json);
+		this.auth = json.identity;
 	}
 
 	print()
