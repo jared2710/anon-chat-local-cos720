@@ -28,16 +28,24 @@ Finally, we clone the application from this git repository, navigate into the cl
 
 ```bash
 git clone https://github.com/jared2710/anon-chat-cos720.git
-cd anon-chat-cos720
+cd anon-chat-local-cos720
 npm install .
 node app -h
 ```
 
 ## Usage
-This is a command line application, and so we run it with the command some flags. See the output of the help command below for all possible options:
+This is a command line application, so we run it with a command and some flags. See the output of the help command below for all possible options:
 
 ```bash
-code
+$ node app -h
+WELCOME TO ANON_CHAT: A project for COS720
+Usage: app [options]
+
+Options:
+  -V, --version       output the version number
+  -f, --fetch         fetch and display all joinable chatrooms
+  -j, --join [room]   join a room to see and send messages
+  -h, --help          display help for command
 ```
 
 ## Contribution
