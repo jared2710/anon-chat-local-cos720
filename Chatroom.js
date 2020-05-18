@@ -119,7 +119,7 @@ class Chatroom
 				for(var i = 0; i < body.length; i++)
 				{
 					var thisOne = body[i];
-					console.log(thisOne);
+					console.log("\x1b[93m" + thisOne + "\x1b[0m");
 				}
 			}
 			else
