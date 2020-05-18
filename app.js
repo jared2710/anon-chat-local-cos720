@@ -18,14 +18,14 @@ function promptWithinRoom(chatroomName)
 	.prompt(
 	[
 		{type:"input", name:"option",
-		message:"Select option:\nRefresh messages (r)\nSend message and refresh (s)\nNew identity (i)\nQuit (q)\n>"}
+		message:"\x1b[92mSelect option:\nRefresh messages (r)\nSend message and refresh (s)\nNew identity (i)\nQuit (q)\n>\x1b[0m"}
 	])
 	.then(answers =>
 	{
 		var option = answers.option;
 		if(option == "r")
 		{
-			console.log("\nFetching messages from chatroom " + chatroomName + "...");
+			console.log("\nFetching messages from chatroom \x1b[93m" + chatroomName + "\x1b[0m...");
 			chatroom.getAllMessages(chatroomName, promptWithinRoom);
 		}
 		else if(option == "s")
@@ -38,10 +38,10 @@ function promptWithinRoom(chatroomName)
 				.then(answers =>
 				{
 					var message = answers.message;
-					console.log("\nSending message to chatroom " + chatroomName + "...");
+					console.log("\nSending message to chatroom \x1b[93m" + chatroomName + "\x1b[0m...");
 					chatroom.sendMessage(chatroomName, message, function()
 					{
-						console.log("\nFetching messages from chatroom " + chatroomName + "...");
+						console.log("\nFetching messages from chatroom \x1b[93m" + chatroomName + "\x1b[0m...");
 						chatroom.getAllMessages(chatroomName, promptWithinRoom);
 					});
 					
@@ -84,7 +84,7 @@ if(program.fetch)
 else if (program.join)
 {
 	console.log("Joined chatroom " + program.join + "!");
-	console.log("\nFetching messages from chatroom " + program.join + "...");
+	console.log("\nFetching messages from chatroom \x1b[93m" + program.join + "\x1b[0m...");
 	chatroom.getAllMessages(program.join, promptWithinRoom);
 }
 

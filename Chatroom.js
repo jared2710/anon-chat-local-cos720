@@ -69,7 +69,7 @@ class Chatroom
 		{"type" : "sendMessage", "auth" : this.auth, "message" : message, "chatroom" : chatroom},
 		function (body)
 		{
-			console.log("STATUS OF MESSAGE SENT TO " + chatroom +":");
+			console.log("STATUS OF MESSAGE SENT TO \x1b[93m" + chatroom +"\x1b[0m:");
 			if(body.status == 1)
 			{
 				console.log("Successfully sent message!");
@@ -88,14 +88,14 @@ class Chatroom
 		{"type" : "getAllMessages", "auth" : this.auth, "chatroom" : chatroom},
 		function (body)
 		{
-			console.log("MESSAGES IN CHATROOM " + chatroom + ":");
+			console.log("MESSAGES IN CHATROOM \x1b[93m" + chatroom + "\x1b[0m:");
 			if(body.status == 1)
 			{
 				body = body.data;
 				for(var i = 0; i < body.length; i++)
 				{
 					var thisOne = body[i];
-					console.log(thisOne.user + ": (" + thisOne.time + ") " + thisOne.message);
+					console.log("\x1b[94m" + thisOne.user + "\x1b[0m: \x1b[37m(" + thisOne.time + ")\x1b[0m " + thisOne.message);
 				}
 			}
 			else
