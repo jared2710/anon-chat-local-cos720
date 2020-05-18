@@ -35,7 +35,7 @@ node app -h
 ```
 
 ## Usage
-This is a command line application, so we run it with a command and some flags. See the output of the help command below for all possible options:
+This is a command line application, so we run it with a command and some flags. We can see all possible options to use with the command by using the help flag, as shown below:
 
 ```bash
 $ node app -h
@@ -47,6 +47,27 @@ Options:
   -f, --fetch         fetch and display all joinable chatrooms
   -j, --join [room]   join a room to see and send messages
   -h, --help          display help for command
+```
+
+We can see the current version of this application using the version flag:
+
+```bash
+$ node app -v
+WELCOME TO ANON_CHAT: A project for COS720
+1.0.0
+```
+
+Now, we start to communicate with the chatroom server. We can see all available rooms which we can join by using the fetch flag:
+
+```bash
+$ node app -f
+WELCOME TO ANON_CHAT: A project for COS720
+
+Fetching all available chatrooms...
+ALL AVAILABLE CHATROOMS:
+fortnite
+room456
+ubuntufans
 ```
 
 ## Uninstallation
