@@ -79,9 +79,9 @@ Joined chatroom fortnite!
 
 Fetching messages from chatroom fortnite...
 MESSAGES IN CHATROOM fortnite:
-- aullouildi: (2020-05-18 18:09:10) hello there
-- aullouildi: (2020-05-18 18:09:19) anyone?
-- esasmlaoes: (2020-05-18 18:09:29) i am here!!!
+- Angel Dorami Grazili: (2020-05-18 18:09:10) hello there
+- Angel Dorami Grazili: (2020-05-18 18:09:19) anyone?
+- Clive Edward Hokku: (2020-05-18 18:09:29) i am here!!!
 
 ? Select option:
 Refresh messages (r)
@@ -93,8 +93,8 @@ Quit (q)
 
 We can now interact with this chatroom entering one of the provided options:
 - r : refresh the messages from the chatroom, i.e. fetch the messages
-- s : send a message to the chatroom and then refresh the messages, 
-- i : scrap the old identity and create a new one for use on the server
+- s : send a message to the chatroom as the current identity and then refresh the messages
+- i : scrap the current identity and create a new one for use on the server
 - q : leave the chatroom and go back to the command line
 
 After choosing one of the options and the result being displayed, the choices will be displayed again, until q is typed (quit).
