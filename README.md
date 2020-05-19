@@ -33,7 +33,7 @@ Finally, we clone the application from this git repository, navigate into the cl
 ```bash
 git clone https://github.com/jared2710/anon-chat-local-cos720.git
 cd anon-chat-local-cos720
-npm install .
+npm install .                 # commander, fs, inquirer and tor-request are installed
 node app -h
 ```
 
@@ -137,4 +137,4 @@ rm -rf anon-chat-local-cos720  # delete the directory cloned to this machine
 ```
 
 ## Contribution
-This application was created by Jared O'Reilly, a Computer Science Honours student at the University of Pretoria. Besides the npm packages, everything was designed, coded and tested by him. Thanks must go to the authors of the [tor-request](https://www.npmjs.com/package/tor-request) package, for making the use of the Tor network a breeze.
+This application was created by Jared O'Reilly, a Computer Science Honours student at the University of Pretoria. Besides the npm packages, everything was designed, coded and tested by him. Thanks must go to the authors of the [tor-request](https://www.npmjs.com/package/tor-request) package, for providing a simplified interface to the Tor network.
