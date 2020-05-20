@@ -1,5 +1,6 @@
 var ChatroomServerInterface = require('./ChatroomServerInterface');
 var fs = require('fs');
+var crypto = require('crypto');
 
 class Chatroom
 {
@@ -8,6 +9,27 @@ class Chatroom
 		this.hostname = hostname;
 		this.csi = new ChatroomServerInterface(hostname);
 		this.auth = this.retrieveStoredAuth();
+		this.pseudonym = this.authToPseudonym(this.auth);
+	}
+
+	jsonFromIdentityFile()
+	{
+		var rawdata = fs.readFileSync("identity.json");
+		var jsonOfFile = JSON.parse(rawdata);
+		return jsonOfFile;
+	}
+
+	jsonFromNamesFile()
+	{
+		var rawdata = fs.readFileSync("names.json");
+		var jsonOfFile = JSON.parse(rawdata);
+		return jsonOfFile;
+	}
+
+	jsonToIdentityFile(json)
+	{
+		var toWrite = JSON.stringify(json);
+		fs.writeFileSync("identity.json", toWrite);
 	}
 
 	randomAuth()
@@ -23,19 +45,6 @@ class Chatroom
 		return result;
 	}
 
-	jsonFromIdentityFile()
-	{
-		var rawdata = fs.readFileSync("identity.json");
-		var jsonOfFile = JSON.parse(rawdata);
-		return jsonOfFile;
-	}
-
-	jsonToIdentityFile(json)
-	{
-		var toWrite = JSON.stringify(json);
-		fs.writeFileSync("identity.json", toWrite);
-	}
-
 	retrieveStoredAuth()
 	{
 		var json = this.jsonFromIdentityFile();
@@ -46,6 +55,42 @@ class Chatroom
 		}
 		return json.identity;
 	}
+
+	sha256(text)
+	{
+		return crypto.createHash('sha256').update(text).digest('hex');
+	}
+	
+	authToPseudonym(auth)
+	{
+		var names = this.jsonFromNamesFile();
+		//console.log(names);
+		//console.log(auth);
+		var hash = this.sha256(auth);
+		//console.log(hash);
+		hash = hash.substring(0, 9);
+		//console.log(hash);
+		var username = "";
+		for(var i = 0; i < 9; i = i + 3)
+		{
+			//console.log(hash[i]);
+			var hex = hash[i] + hash[i+1] + hash[i+2];
+			//console.log(hex);
+
+			var pos = parseInt(Number("0x" + hex), 10);
+			//console.log(pos);
+
+			pos += (i/3)*16*16*16;
+			//console.log(pos);
+
+			var toAdd = names[pos];
+			//console.log(toAdd);
+			
+			username += toAdd + " ";
+			//console.log(username);
+		}
+		return username.substring(0, username.length-1);
+	}
 	
 	changeIdentity()
 	{
@@ -53,6 +98,7 @@ class Chatroom
 		json.identity = this.randomAuth();
 		this.jsonToIdentityFile(json);
 		this.auth = json.identity;
+		this.pseudonym = this.authToPseudonym(this.auth);
 	}
 
 	print()

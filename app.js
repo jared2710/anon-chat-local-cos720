@@ -40,7 +40,7 @@ function promptWithinRoom(chatroomName)
 	.prompt(
 	[
 		{type:"input", name:"option",
-		message:"\x1b[92mSelect option:\nRefresh messages (r)\nSend message and refresh (s)\nNew identity (i)\nQuit (q)\n>\x1b[0m"}
+		message:"\x1b[92mSelect option, " + chatroom.pseudonym + ":\nRefresh messages (r)\nSend message and refresh (s)\nNew identity (i)\nQuit (q)\n>\x1b[0m"}
 	])
 	.then(answers =>
 	{

@@ -137,4 +137,4 @@ rm -rf anon-chat-local-cos720  # delete the directory cloned to this machine
 ```
 
 ## Contribution
-This application was created by Jared O'Reilly, a Computer Science Honours student at the University of Pretoria. Besides the npm packages, everything was designed, coded and tested by him. Thanks must go to the authors of the [tor-request](https://www.npmjs.com/package/tor-request) package, for providing a simplified interface to the Tor network.
+This application was created by Jared O'Reilly, a Computer Science Honours student at the University of Pretoria. Besides the npm packages, everything was designed, coded and tested by him. Thanks must go to the authors of the [tor-request](https://www.npmjs.com/package/tor-request) package, for providing a simplified interface to the Tor network, as well as to the [random-name](https://github.com/dominictarr/random-name) project, for providing a list of 21986 names in JSON format which were used in pseudonym creation.
