@@ -139,6 +139,10 @@ class Chatroom
 			if(body.status == 1)
 			{
 				body = body.data;
+				if(body.length == 0)
+				{
+					console.log("\x1b[37m- No messages yet!\x1b[0m");
+				}
 				for(var i = 0; i < body.length; i++)
 				{
 					var thisOne = body[i];
@@ -171,6 +175,10 @@ class Chatroom
 			if(body.status == 1)
 			{
 				body = body.data;
+				if(body.length == 0)
+				{
+					console.log("\x1b[37m- No available chatrooms on this server.\x1b[0m");
+				}
 				for(var i = 0; i < body.length; i++)
 				{
 					var thisOne = body[i];
