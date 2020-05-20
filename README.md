@@ -83,7 +83,7 @@ MESSAGES IN CHATROOM fortnite:
 - Angel Dorami Grazili: (2020-05-18 18:09:19) anyone?
 - Clive Edward Hokku: (2020-05-18 18:09:29) i am here!!!
 
-? Select option:
+? Select option, Clive Edward Hokku:
 Refresh messages (r)
 Send message and refresh (s)
 New identity (i)
