@@ -130,6 +130,7 @@ class Chatroom
 
 	getAllMessages(chatroom, callback)
 	{
+		var myName = this.pseudonym;
 		this.csi.sendToServer(
 		{"type" : "getAllMessages", "auth" : this.auth, "chatroom" : chatroom},
 		function (body)
@@ -141,7 +142,15 @@ class Chatroom
 				for(var i = 0; i < body.length; i++)
 				{
 					var thisOne = body[i];
-					console.log("- \x1b[94m" + thisOne.user + "\x1b[0m: \x1b[37m(" + thisOne.time + ")\x1b[0m " + thisOne.message);
+					if(thisOne.user === myName)
+					{
+						thisOne.user = "\x1b[32m" + thisOne.user + "\x1b[0m";
+					}
+					else
+					{
+						thisOne.user = "\x1b[94m" + thisOne.user + "\x1b[0m";
+					}
+					console.log("- " + thisOne.user + ": \x1b[37m(" + thisOne.time + ")\x1b[0m " + thisOne.message);
 				}
 			}
 			else

@@ -33,7 +33,7 @@ Finally, we clone the application from this git repository, navigate into the cl
 ```bash
 git clone https://github.com/jared2710/anon-chat-local-cos720.git
 cd anon-chat-local-cos720
-npm install .                 # commander, fs, inquirer and tor-request are installed
+npm install .                 # commander, crypto, fs, inquirer and tor-request are installed
 node app -h
 ```
 
