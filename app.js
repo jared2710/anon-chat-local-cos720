@@ -1,5 +1,5 @@
-var program = require('commander');
-var inquirer = require('inquirer');
+var program = require("commander");
+var inquirer = require("inquirer");
 
 var Chatroom = require('./Chatroom');
 var chatroom = new Chatroom("anon-chat-cos720.herokuapp.com");
@@ -40,7 +40,7 @@ function promptWithinRoom(chatroomName)
 	.prompt(
 	[
 		{type:"input", name:"option",
-		message:"\x1b[92mSelect option, \x1b[0m\x1b[32m" + chatroom.pseudonym + "\x1b[0m\x1b[92m:\nRefresh messages (r)\nSend message and refresh (s)\nNew identity (i)\nQuit (q)\n>\x1b[0m"}
+		message:"\x1b[92mSelect option, \x1b[0m\x1b[32m" + chatroom.pseudonym() + "\x1b[0m\x1b[92m:\nRefresh messages (r)\nSend message and refresh (s)\nNew identity (i)\nQuit (q)\n>\x1b[0m"}
 	])
 	.then(answers =>
 	{
@@ -76,10 +76,10 @@ function promptWithinRoom(chatroomName)
 		}
 		else if(option == "i")
 		{
-			var oldName = chatroom.pseudonym;
+			var oldName = chatroom.pseudonym();
 			console.log("\nChanging identity (\x1b[32m" + oldName + "\x1b[0m) for all chatrooms...");
 			chatroom.changeIdentity();
-			var newName = chatroom.pseudonym;
+			var newName = chatroom.pseudonym();
 			console.log("Changed identity to \x1b[32m" + newName + "\x1b[0m!");
 			promptWithinRoom(chatroomName);
 		}
